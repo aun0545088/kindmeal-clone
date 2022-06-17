@@ -3,6 +3,7 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 
 var userDetails = JSON.parse(localStorage.getItem("signupForm"))
@@ -112,9 +113,9 @@ const Navbar = ({data,handleDataFun}) => {
           </Icon>
         </Center>
         {data? <div>
-          <div style={{display:"flex"}}>
-            <h2>{userDetails.name}</h2>
-            <h3 onClick={handleDataFun}>Logout</h3>
+          <div style={{display:"flex",gap:"20px",alignItems:"center",marginTop:"20px"}}>
+            <div style={{color:"grey",textShadow:"0.8px 1.2px",fontSize:"20px",fontWeight:"bold"}}>{userDetails.name}</div>
+            <div style={{color:"grey",fontSize:"20px",fontWeight:"bold",paddingTop:"8px",cursor:"pointer"}} onClick={handleDataFun}><LockOutlinedIcon /></div>
           </div>
         </div> :<Right>
           <Option>
